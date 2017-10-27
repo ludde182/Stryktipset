@@ -1,10 +1,15 @@
 var express = require('express');
 var promise = require('promise');
-var https = require('https')
+var https = require('https');
+var https = require('https');
 var request = require('request');
 var app = express();
 var http = require('http');
 var path = require('path');
+
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
 
 app.use(express.static(__dirname));
 
@@ -13,6 +18,12 @@ app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
+
+httpServer.listen(app.get('port'));
+httpsServer.listen(app.get('port'));
+
+
 
 console.log('Listening on port 8081');
 
