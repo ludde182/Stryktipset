@@ -6,10 +6,6 @@ var app = express();
 var http = require('http');
 var path = require('path');
 
-
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
-
 app.use(express.static(__dirname));
 
 app.set('port', (process.env.PORT || 5000));
