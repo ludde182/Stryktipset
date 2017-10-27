@@ -1,0 +1,29 @@
+{
+  "name": "",
+  "version": "",
+  "description": "Svenska Spel Data.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "plsgo": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "ludohl",
+  "dependencies": {
+    "chart.js": "^2.7.0",
+    "express": "^4.16.1",
+    "https": "^1.0.0",
+    "promise": "^8.0.1",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": "8.4.0"
+  }
+}
