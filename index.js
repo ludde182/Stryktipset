@@ -58,6 +58,11 @@ app.get('/plshelp', (req, res)=> {
 		Promise.all(array).then(function(data) {
 		var resarray = [];
 			for (var i = 0; i < data.length; i++) {
+				var correctDraw = "";
+				for(var j = 0; j < data[i].result.events.length; j++) {
+					correctDraw += data[i].result.events[j].outcome;
+				}
+
 				var tempObj = {
 					round: data[i].result.closeTime.substring(0,10),
 					13: parseInt(data[i].result.distribution[0].amount),
@@ -69,8 +74,10 @@ app.get('/plshelp', (req, res)=> {
 					'12win': data[i].result.distribution[0].winners,
 					'13win': data[i].result.distribution[0].winners,
 					drawNum: data[i].result.drawNumber,
-					turnover: parseInt(data[i].result.turnover)
+					turnover: parseInt(data[i].result.turnover),
+					finalResult: correctDraw
 				}
+
 				var tempArray = parseInt(data[i].result.distribution[0].amount);
 				resarray.push(tempObj);
 			} 
@@ -86,8 +93,8 @@ app.get('/plshelp', (req, res)=> {
 
 function fetchData(callback) {
 	var ps = [];
-	var drawNum = 4464; 
-	for (var i = 0; i < 52; i++) {
+	var drawNum = 4267; 
+	for (var i = 0; i < 10; i++) {
 		var prom = new Promise((resolve, reject)=>{
 		var url = ('https://api.www.svenskaspel.se/external/draw/stryktipset/draws/'+drawNum+'/result?accesskey=a7915973-7d03-4e93-8d44-e9d988451a52');
 
