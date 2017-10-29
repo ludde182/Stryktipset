@@ -9,6 +9,14 @@ var banana = [];
 var adf = [];
 var drawNum = [];
 
+var source = $("#some-template").html(); 
+var template = Handlebars.compile(source); 
+
+Handlebars.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});
+
 fetch('/plshelp').then(function(response) {
 	return response.json()
 }).then(function(response) {
@@ -78,7 +86,7 @@ fetch('/plshelp').then(function(response) {
 			'2': Math.round((two / total ) * 100 * 10)/10
 		}
 	}	
-	console.log(obj);	
+	$('#result-display').append(template(obj));
 });
 
 function renderChart() {

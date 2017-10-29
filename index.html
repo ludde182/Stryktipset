@@ -4,8 +4,8 @@
 	<title>Bitcoin</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-	<script type="text/javascript" src="hello.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -27,6 +27,13 @@
 					<h1>Stryktipset Visualiserat</h1>
 				</div>
 			</header>
+			<section class="row"">
+				<div class="first-section table col-md-6" id="result-display">
+			<p>Baserat på de 200 senaste omgångarna av Stryktipset ser fördelningen av tecken ut som följande.</p>
+
+				</div>
+			</section>
+
 			<section class="row">
 				<div class="col-md-6 first-section">
 					<div id="infotext">
@@ -37,40 +44,32 @@
 			</section>
 			<section class="row">
 				<div class="col-md-6 first-section">
-					<p>Here you can see the next chart showing some motherfucking codefucker</p>
+					<p>Utdelning vid 13 rätt</p>
 					<canvas id="myChart"></canvas>
 				</div>
 			</section>
 
-			<section class="row">
-				<div class="first-section table col-md-6">
-				<table class="table">
-				  <thead>
-				    <tr>
-				      <th class="col-md-4">Games</th>
-				      <th class="col-md-3">1</th>
-				      <th class="col-md-3">X</th>
-				      <th class="col-md-3">2</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				    <tr>
-				      <td>Match 1</td>
-				      <td>47%</td>
-				      <td>30%</td>
-				      <td>23%</td>
-				    </tr>
-				    <tr>
-				      <td>Match 2</td>
-				      <td>55%</td>
-				      <td>22%</td>
-				      <td>23%</td>
-				    </tr>
-				  </tbody>
-				</table>
-			</div>
-			</section>
-	</div>
+
+<script id="some-template" type="text/x-handlebars-template">
+			<table class="table">
+				<thead>
+					<th class="col-md-4">Match</th>
+					<th class="col-md-4">1</th>
+					<th class="col-md-4">X</th>
+					<th class="col-md-4">2</th>
+				</thead>
+				<tbody>
+					{{#each this}}
+				<tr>
+					<td><b>Match {{inc @index}}</b></td>
+					<td>{{1}}%</td>
+					<td>{{X}}%</td>
+					<td>{{2}}%</td>
+				</tr>
+					{{/each}}
+				</tbody>
+			</table>
+</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108902350-1"></script>
@@ -85,5 +84,6 @@
 
 
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="hello.js"></script>
 </body>
 </html>

@@ -6,6 +6,15 @@ body {
   background-color: #eaeaf0;
 }
 
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+    font-size: 1.2em;
+}
+
 header h1{
   margin: 0;
   padding: 0;
@@ -21,13 +30,13 @@ header {
   margin: 0;
   background-color: #f00f01;
   display: flex;
-  margin-bottom: 2%;
 }
 
 .navbar {
   margin: 0;
-  padding: 0;
+  padding-left: 7%;
   font-size: 10px;
+  border-radius: 0;
 }
 
 #header-img {
@@ -48,18 +57,22 @@ header {
 .row {
   width: 100%;
   display: flex;
-  min-height: 500px;
+  min-height: 300px;
   justify-content: center;
 }
 
 #infotext {
   height: 20%;
   padding: 5%;
-  font-size: 1.2em;
 }
 
 .table.col-md-6 {
   padding: 0 15%;
+  padding-top: 5%;
+}
+
+.table {
+  margin-top: 4%;
 }
 
 .table table, td, th {
