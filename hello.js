@@ -33,6 +33,8 @@ fetch('/plshelp').then(function(response) {
 	
 	renderChart();
 	renderChart2();
+	console.log(motherOfAllArrays)
+	console.log(compareArray(motherOfAllArrays))
 	return motherOfAllArrays;
 }).then(function(response) {
 	var statObject = [];
@@ -179,5 +181,15 @@ function renderChart2() {
 	        }
     	}
 	});
+}
+
+function compareArray(array) {
+	var result = array.reduce(function(count, str) {
+	  count[str] = (count[str] || 0) + 1;
+	  
+	  return count;
+	}, {});
+
+	return result;
 }
 
