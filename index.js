@@ -93,8 +93,8 @@ app.get('/plshelp', (req, res)=> {
 
 function fetchData(callback) {
 	var ps = [];
-	var drawNum = 4316; 
-	for (var i = 0; i < 200; i++) {
+	var drawNum = 4418; 
+	for (var i = 0; i < 100; i++) {
 		var prom = new Promise((resolve, reject)=>{
 		var url = ('https://api.www.svenskaspel.se/external/draw/stryktipset/draws/'+drawNum+'/result?accesskey=a7915973-7d03-4e93-8d44-e9d988451a52');
 
