@@ -21,39 +21,7 @@ app.get('/', (req,res) => {
 	res.sendFile(path.join(__dirname + '/index.html')); 
 });
 
-app.get('/getapi', (req,res)=> {
-	var drawNum = 4500;
-	var url = ('https://api.www.svenskaspel.se/external/draw/stryktipset/draws/'+drawNum+'/result?accesskey=a7915973-7d03-4e93-8d44-e9d988451a52');
-	var resArray = [];
-	
-	new Promise((resolve, reject)=> {
-		
-			request(url, (err, response, body)=> {
-				body = JSON.parse(body);
-				var tempObj = {
-						13 : '',
-							}
-				
-				var distribution = body.result.distribution;
-				var events = body.result.events
-
-				for (var i = 0; i < distribution.length; i++) {
-					tempObj[13] = distribution[0].amount;
-				}
-
-				resArray.push(tempObj);
-				resolve(resArray);
-				drawNum++;
-		});
-		return resArray;
-	}).then(function(data){
-		res.send(JSON.stringify(data));
-	}).catch((err)=>{
-		console.log('Something went wrong', err);
-	})
-});
-
-app.get('/plshelp', (req, res)=> {
+app.get('/getAPI', (req, res)=> {
 	fetchData(function(array) {
 		Promise.all(array).then(function(data) {
 		var resarray = [];
@@ -86,7 +54,7 @@ app.get('/plshelp', (req, res)=> {
 		}).then(function(data) {
 			res.send(JSON.stringify(data));
 		}).catch(function(err) {
-			console.log('An error occuraccio: ', err);
+			console.log('An error occurred: ', err);
 		}) 
 	});
 })

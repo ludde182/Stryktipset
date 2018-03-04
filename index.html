@@ -3,6 +3,7 @@
 <head>
 	<title>Stryktipsstatistik</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans" rel="stylesheet">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
@@ -13,29 +14,36 @@
 			<nav class="navbar">
 			</nav>
 			<header class="header">
+				<h1>Stryktipset Visualiserat</h1>
 				<div id="header-img">
-					<h1>Stryktipset Visualiserat</h1>
+					<img src="svenskaspel.png">
 				</div>
 			</header>
 			<section class="row"">
-				<div class="first-section table col-md-6" id="result-display">
+				<div class="first-section col-md-6">
 					<div class="infotext">
-						<p>Baserat på de 100 senaste omgångarna av Stryktipset ser fördelningen av tecken ut som följande.</p>
+						<h1>Total Teckenfördelning</h1>
+						<p>Tabellen nedan visar sammanlagt hur stor andel (i procent) av matcherna där resultatet blir något av tecknen 1, X eller 2</p>
 					</div>
+					<div id="result-display"></div>
 				</div>
 			</section>
 
-			<section class="row">
+			<section class="row" id="two">
 				<div class="col-md-6">
 					<div class="infotext">
-					<p>Grafen nedan visar den totala omsättningen för varje omgång i jämförelse till den totala utdelningen.</p>
+						<h1>Total omsättning vs utdelning</h1>
+						<p>Grafen nedan visar den totala omsättningen för varje omgång i jämförelse till den totala utdelningen.</p>
 					</div>
 					<canvas id="myChart2"></canvas>
 				</div>
 			</section>
-			<section class="row">
+			<section class="row" id="three">
 				<div class="col-md-6">
-					<p>Utdelning vid 13 rätt</p>
+					<div class="infotext">
+						<h1>Utdelning vid 13 rätt</h1>
+						<p>Grafen nedan visar utdelningen vid 13 rätt</p>
+					</div>
 					<canvas id="myChart"></canvas>
 				</div>
 			</section>
@@ -71,6 +79,6 @@
 
 			  gtag('config', 'UA-108902350-1');
 			</script>
-			<script type="text/javascript" src="hello.js"></script>
+			<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
